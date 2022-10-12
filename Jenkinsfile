@@ -18,7 +18,7 @@ pipeline{
 				stage ('building .war file'){
 										steps {
 												dir ('/mnt/jenkins/game-of-life/'){
-													
+													sh "rm -rf /root/.m2"
 													sh "mvn clean install"
 													
 												}
