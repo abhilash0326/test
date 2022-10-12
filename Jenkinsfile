@@ -34,6 +34,9 @@ pipeline{
 					}
 				stage ('deployment of gameoflife'){
 										steps{
+												sh "chmod -R 777 /mnt/docker"
+												sh "rm -rf /mnt/docker/gameoflife.war"
+												sh "cp /mnt/jenkins/game-of-life/gameoflife-web/target/gameoflife.war /mnt/docker/"
 												sh "docker system prune -a -f"												
 												sh "docker build -t gol:1 /mnt/docker/"
 												sh " docker run -itdp 8010:8080 gol:1 "
