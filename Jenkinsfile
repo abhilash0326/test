@@ -34,6 +34,7 @@ pipeline{
 					}
 				stage ('deployment of gameoflife'){
 										steps{
+												sh "docker system prune -a -f"												
 												sh "docker build -t gol:1 /mnt/docker/"
 												sh " docker run -itdp 8080:80 gol:1 "
 										}
