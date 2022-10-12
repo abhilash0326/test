@@ -19,6 +19,7 @@ pipeline{
 										steps {
 												dir ('/mnt/jenkins/game-of-life/'){
 													sh "rm -rf /root/.m2"
+													sh "rm -rf /mnt/jenkins/game-of-life/target"
 													sh "mvn clean install"
 													
 												}
