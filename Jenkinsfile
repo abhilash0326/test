@@ -36,7 +36,7 @@ pipeline{
 										steps{
 												sh "docker system prune -a -f"												
 												sh "docker build -t gol:1 /mnt/docker/"
-												sh " docker run -itdp 8080:80 gol:1 "
+												sh " docker run -itdp 8010:8080 gol:1 "
 										}
 					}
 		}
