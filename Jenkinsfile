@@ -19,7 +19,7 @@ pipeline{
 										steps {
 												dir ('/mnt/jenkins/game-of-life/'){
 													sh "rm -rf /root/.m2"
-													sh "rm -rf /mnt/jenkins/game-of-life/target"
+													sh "rm -rf /mnt/jenkins/game-of-life/gameoflife-web/target"
 													sh "mvn clean install"
 													
 												}
@@ -39,7 +39,7 @@ pipeline{
 												sh "cp /mnt/jenkins/game-of-life/gameoflife-web/target/gameoflife.war /mnt/docker/"
 												sh "docker system prune -a -f"												
 												sh "docker build -t gol:1 /mnt/docker/"
-												sh " docker run -itdp 8010:8080 gol:1 "
+												sh "docker run -itdp 8010:8080 gol:1"
 										}
 					}
 		}
