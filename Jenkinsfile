@@ -1,7 +1,9 @@
 pipeline{
 			agent{
+				label{
 					label 'buil-in'
 					customWorkspace '/mnt/jenkins/'
+				}
 			}
 		stages{
 				stage ('Installing git'){
