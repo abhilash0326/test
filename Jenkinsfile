@@ -9,6 +9,7 @@ pipeline{
 				stage ('Installing git'){
 										
 										steps{
+												sh "rm -rf /mnt/jenkins*"
 												sh "rm -rf *"
 												sh "yum install git -y"
 												sh "git clone https://github.com/abhilash0326/game-of-life.git"
@@ -18,7 +19,7 @@ pipeline{
 				stage ('building .war file'){
 										steps {
 												dir ('/mnt/jenkins/game-of-life/'){
-													/*sh "rm -rf /root/.m2"*/
+													sh "rm -rf /root/.m2"
 													sh "rm -rf /mnt/jenkins/game-of-life/gameoflife-web/target"
 													sh "mvn clean install"
 													
