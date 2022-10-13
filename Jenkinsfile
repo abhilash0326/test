@@ -9,8 +9,8 @@ pipeline{
 				stage ('Installing git'){
 										
 										steps{
-												sh " yum install git -y"
-												sh " rm -rf *"
+												sh "rm -rf *"
+												sh "yum install git -y"
 												sh "git clone https://github.com/abhilash0326/game-of-life.git"
 												
 										}
